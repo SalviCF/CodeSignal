@@ -17,7 +17,6 @@ def isCryptSolution(crypt: Array[String], solution: Array[Array[Char]]): Boolean
   if (!invalidInput) {
     val code = dWord1.toLong + dWord2.toLong
     val imageCode = (code.toString.map(n => solution.exists(_.last == n))).forall(_ == true)
-    if (imageCode && decryptWord(word3) == code.toString) true
-    else false
+    (imageCode && decryptWord(word3) == code.toString)
   } else false
 }
