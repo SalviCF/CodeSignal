@@ -1,11 +1,11 @@
 import scala.annotation.tailrec
 
-// Singly-linked lists are already defined with this interface:
-// class ListNode[T](x : T) {
-//   var value: T = x
-//   var next: Option[ListNode[T]] = None
-// }
-//
+// Singly-linked list
+ class ListNode[T](x : T) {
+   var value: T = x
+   var next: Option[ListNode[T]] = None
+ }
+
 def removeKFromList(l: Option[ListNode[Int]], k: Int): Option[ListNode[Int]] = {
   @tailrec
   def remove(head: Option[ListNode[Int]], prev: Option[ListNode[Int]], curr: Option[ListNode[Int]]): Option[ListNode[Int]] = {
