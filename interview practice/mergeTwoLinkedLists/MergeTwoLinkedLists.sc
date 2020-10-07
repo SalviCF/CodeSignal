@@ -19,9 +19,9 @@ def mergeTwoLinkedLists(l1: Option[ListNode[Int]], l2: Option[ListNode[Int]]): O
   }
 
   (l1, l2) match {
-    case (None, None)          =>  None
-    case (None, Some(_))       =>  l2
-    case (Some(_), None)       =>  l1
+    case (None, None)          => None
+    case (None, Some(_))       => l2
+    case (Some(_), None)       => l1
     case (Some(n1), Some(n2))  => if (n1.value < n2.value) { trav(n1.next, l2, l1); l1 }
                                   else { trav(l1, n2.next, l2); l2 }
   }
